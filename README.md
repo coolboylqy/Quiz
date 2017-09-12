@@ -42,16 +42,16 @@ The method of submission is part of the test (usage of Git) - but we won't use `
 
     1.  Write a PowerShell command (assume Windows 2012 R2) to add a new firewall rule on a single server, allowing incoming connections on port `3389` for `TCP` protocol __limited to the public IP of the vendor only__ (assuming we have the public IP of the vendor)
 
-
+```
     Get-NetFirewallRule -DisplayName '*Remote Desktop*' | Set-NetFirewallRule -Action Allow
     Set-NetFirewallRule -Name RemoteDesktop-UserMode-In-TCP -RemoteAddress "192.168.0.100"
-    
+```    
 
 1.  How do you list all Computers in an Active Directory Domain using Powershell (output DNSHostname in a table format, no need for `filters` or `SearchBase`)
 
-    
+```
     Get-ADComputer -Filter * | Format-Table Name
-    
+```    
 
 1.  What could possible troubleshoot tests be for the following output on a macOS machine. 
     
@@ -68,7 +68,8 @@ The method of submission is part of the test (usage of Git) - but we won't use `
     Notes:
 
     -   Local machines in the same network can still be pinged by IP
-    
+   
+   ```bash
     1. Intract Net works fine as mcahines are still pingalbe within the network
     2. Unable to ping microsoft.com, need to check if this machine can access other web pages
        a) if can access other web pages, will try to create a new network location see if it helps
@@ -80,5 +81,6 @@ The method of submission is part of the test (usage of Git) - but we won't use `
           need to check whether it's a hardware issue or it's a service provider issue 
     4. DNS server issue, unable to resolve DNS request, need to check if the server is still responsible.
           If can get connection to the DNS server, try to check the dns settings and clear the cache.
+   ```       
 
 Thank you for your time.
